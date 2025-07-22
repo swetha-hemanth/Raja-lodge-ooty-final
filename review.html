@@ -1,131 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Guest Reviews - Raja Lodge</title>
+  <body>
+
+  <!-- ✅ Navigation Bar START -->
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 1rem 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="review.html">Review</a>
+    <a href="contact.html">📞 Contact</a>
+  </nav>
+  <!-- ✅ Navigation Bar END -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raja Lodge Ooty</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     body {
-      background: url('images/background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      margin: 0;
       font-family: Arial, sans-serif;
+      background-image: url('67e47f889e-7mlrs5cjblqv1l3ar6hhr01qy15ddj5hk2 (1).png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 150px;
+      height: auto;
+      background: transparent;
+    }
+
+    .header-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .header-box p {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* WhatsApp Button between welcome and about */
+    .middle-contact {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .middle-contact a {
+      background-color: #25D366;
       color: white;
-      text-align: center;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      max-width: 600px;
-      margin: 40px auto;
-      border-radius: 20px;
-    }
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    form input, textarea, select {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: none;
-      background-color: #ffcc00;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 18px;
       font-weight: bold;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
-    .reviews {
-      margin-top: 30px;
-      text-align: left;
+    .middle-contact a:hover {
+      background-color: #1ebd5a;
     }
 
-    .review-item {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
+    /* About section */
+    section {
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 850px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
     }
 
-    .stars {
-      font-size: 24px;
-      color: gold;
-      text-align: center;
+    section h3 {
+      margin-top: 0;
+      font-size: 26px;
+      border-bottom: 2px solid #aaa;
+      padding-bottom: 10px;
     }
 
-    .stars input {
-      display: none;
+    section p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #eee;
     }
 
-    .stars label {
-      font-size: 30px;
-      cursor: pointer;
-      padding: 0 3px;
-    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .welcome-text {
+        font-size: 18px;
+      }
 
-    .stars input:checked ~ label {
-      color: gold;
+      .middle-contact a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Guest Reviews</h2>
-    <form id="reviewForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <div class="stars">
-        <input type="radio" name="rating" id="star5" value="5"><label for="star5">★</label>
-        <input type="radio" name="rating" id="star4" value="4"><label for="star4">★</label>
-        <input type="radio" name="rating" id="star3" value="3"><label for="star3">★</label>
-        <input type="radio" name="rating" id="star2" value="2"><label for="star2">★</label>
-        <input type="radio" name="rating" id="star1" value="1"><label for="star1">★</label>
-      </div>
-      <textarea id="reviewText" placeholder="Write your review here..." rows="4" required></textarea>
-      <button type="submit">Submit Review</button>
-    </form>
 
-    <div class="reviews" id="reviews">
-      <h3>What Guests Say:</h3>
-      <div class="review-item"><strong>Priya:</strong> ★★★★★ - Amazing service and rooms!</div>
-      <div class="review-item"><strong>Arun:</strong> ★★★★☆ - Clean and comfortable stay.</div>
-      <div class="review-item"><strong>Meena:</strong> ★★★★★ - Best lodge near Ooty Bus Stand!</div>
-      <div class="review-item"><strong>Karthik:</strong> ★★★★☆ - Good pricing and location.</div>
+  <!-- Logo and Welcome -->
+  <header>
+    <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo" />
+
+    <div class="header-box">
+      <h2 class="welcome-text">WELCOME TO RAJA LODGE</h2>
+      <p>Comfortable and Affordable Stay in the Heart of Ooty</p>
     </div>
+  </header>
+
+  <!-- WhatsApp Contact Button in center -->
+  <div class="middle-contact">
+    <a href="https://wa.me/9843830181" target="_blank">
+      <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+    </a>
   </div>
 
-  <script>
-    const form = document.getElementById("reviewForm");
-    const reviewsDiv = document.getElementById("reviews");
+  <!-- About Us Section -->
+  <section>
+    <h3>About Us</h3>
+    <p>
+      Raja Lodge has been proudly serving travelers for over 20 years with clean rooms, friendly staff, and a peaceful environment.
+      Located right near the Ooty Bus Stand, our lodge is the perfect place for families and tourists who want comfort and convenience.
+      Whether you're visiting for a weekend or an extended stay, we ensure a pleasant experience with budget-friendly rates and warm hospitality.
+    </p>
+  </section>
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const reviewText = document.getElementById("reviewText").value;
-      const rating = document.querySelector('input[name="rating"]:checked');
-
-      if (!rating) {
-        alert("Please select a star rating!");
-        return;
-      }
-
-      const stars = "★".repeat(rating.value) + "☆".repeat(5 - rating.value);
-      const newReview = document.createElement("div");
-      newReview.className = "review-item";
-      newReview.innerHTML = `<strong>${name}:</strong> ${stars} - ${reviewText}`;
-      reviewsDiv.appendChild(newReview);
-
-      // Reset form
-      form.reset();
-    });
-  </script>
 </body>
 </html>
-      
