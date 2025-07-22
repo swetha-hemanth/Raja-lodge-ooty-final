@@ -142,6 +142,39 @@
       document.getElementById("reviews").prepend(reviewBox);
       input.value = "";
     }
+    <script>
+  // Load stored reviews when page loads
+  window.onload = function() {
+    const stored = JSON.parse(localStorage.getItem("reviews") || "[]");
+    const container = document.getElementById("reviews");
+
+    stored.forEach(text => {
+      const box = document.createElement("div");
+      box.className = "review-box";
+      box.innerHTML = `<div class="stars">★★★★★</div><p>${text}</p>`;
+      container.appendChild(box);
+    });
+  };
+
+  function submitReview() {
+    const input = document.getElementById("reviewInput");
+    const text = input.value.trim();
+    if (text === "") return alert("Please enter your review!");
+
+    const reviewBox = document.createElement("div");
+    reviewBox.className = "review-box";
+    reviewBox.innerHTML = `<div class="stars">★★★★★</div><p>${text}</p>`;
+
+    document.getElementById("reviews").prepend(reviewBox);
+
+    // Save to local storage
+    const stored = JSON.parse(localStorage.getItem("reviews") || "[]");
+    stored.unshift(text);
+    localStorage.setItem("reviews", JSON.stringify(stored));
+
+    input.value = "";
+  }
+</script>
   </script>
 </body>
 </html>
