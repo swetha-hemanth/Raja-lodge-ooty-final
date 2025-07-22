@@ -2,73 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Raja Lodge - Gallery</title>
   <style>
     body {
-      background-color: #000;
-      color: white;
       margin: 0;
       font-family: Arial, sans-serif;
-      padding: 20px;
+      background: #111;
+      color: #fff;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-top: 30px;
+      font-size: 2.5rem;
+      color: #f0f0f0;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 0 20px;
+      padding: 40px;
     }
 
     .gallery img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid white;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
-    a.home-link {
-      display: block;
+    .back-link {
       text-align: center;
-      margin-top: 40px;
-      color: #25D366;
+      margin-bottom: 40px;
+    }
+
+    .back-link a {
+      color: #ccc;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <h1>Raja Lodge - Gallery</h1>
+  <h1>Raja Lodge Gallery</h1>
 
   <div class="gallery">
-    <img src="images/JMG-20250721-WA0041.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0043.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0044.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0042.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0045.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0046.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0048.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0049.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0050.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0047.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0040.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0024.jpg" alt="Raja Lodge">
-    <img src="images/JMG-20250721-WA0022.jpg" alt="Raja Lodge">
+    <img src="images/JMG-20250721-WA0041.jpg" alt="Gallery Image 1">
+    <img src="images/JMG-20250721-WA0043.jpg" alt="Gallery Image 2">
+    <img src="images/JMG-20250721-WA0044.jpg" alt="Gallery Image 3">
+    <img src="images/JMG-20250721-WA0042.jpg" alt="Gallery Image 4">
+    <img src="images/JMG-20250721-WA0045.jpg" alt="Gallery Image 5">
+    <img src="images/JMG-20250721-WA0046.jpg" alt="Gallery Image 6">
+    <img src="images/JMG-20250721-WA0048.jpg" alt="Gallery Image 7">
+    <img src="images/JMG-20250721-WA0049.jpg" alt="Gallery Image 8">
+    <img src="images/JMG-20250721-WA0050.jpg" alt="Gallery Image 9">
+    <img src="images/JMG-20250721-WA0047.jpg" alt="Gallery Image 10">
+    <img src="images/JMG-20250721-WA0040.jpg" alt="Gallery Image 11">
+    <img src="images/JMG-20250721-WA0024.jpg" alt="Gallery Image 12">
+    <img src="images/JMG-20250721-WA0022.jpg" alt="Gallery Image 13">
   </div>
 
-  <a class="home-link" href="index.html">← Back to Home</a>
+  <div class="back-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
 
 </body>
 </html>
+
