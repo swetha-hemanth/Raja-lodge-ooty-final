@@ -8,7 +8,7 @@
   <!-- Beautiful Font -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-  <!-- WhatsApp Icon from Font Awesome -->
+  <!-- Font Awesome for WhatsApp Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -22,7 +22,7 @@
       color: #fff;
     }
 
-    /* WhatsApp Button */
+    /* WhatsApp floating button (top-right) */
     .whatsapp-icon {
       position: fixed;
       top: 20px;
@@ -77,6 +77,29 @@
       color: #ccc;
     }
 
+    .middle-contact {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .middle-contact a {
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .middle-contact a:hover {
+      background-color: #1ebd5a;
+    }
+
     section {
       background-color: rgba(0, 0, 0, 0.75);
       margin: 40px auto;
@@ -103,15 +126,14 @@
 </head>
 <body>
 
-  <!-- WhatsApp floating button -->
+  <!-- WhatsApp floating icon (top-right) -->
   <a href="https://wa.me/9843830181" class="whatsapp-icon" target="_blank" title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <!-- Logo and Welcome -->
   <header>
     <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo" />
 
     <div class="header-box">
-      <h2 class="welcome-text">WELCOME TO RAJA LODGE - OOTY</h2>
-      <p>Comfortable and Affordable Stay in the Heart of Ooty</p>
-    </div            
+      <h2 class="welcome-text">WELCOME
