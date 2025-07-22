@@ -2,113 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Raja Lodge Ooty</title>
+  <title>Raja Lodge - Ooty</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
       font-family: 'Montserrat', sans-serif;
       background: url('67e47f889e-7mlrs5cjblqv1l3ar6hhr01qy15ddj5hk2 (1).png') no-repeat center center/cover;
+      height: 100vh;
       color: white;
     }
-
-    header {
+    nav {
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 30px;
+      padding: 10px 30px;
     }
-
     .nav-left, .nav-right {
-      flex: 1;
       display: flex;
-      justify-content: center;
       gap: 20px;
     }
-
-    .nav-center {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
-
-    nav a {
-      text-decoration: none;
+    .nav-left a, .nav-right a {
       color: white;
+      text-decoration: none;
+      font-size: 1rem;
       font-weight: bold;
-      font-size: 16px;
     }
-
-    nav a:hover {
-      color: #00ffae;
-    }
-
-    .nav-center img {
-      height: 70px;
-      border-radius: 10px;
-    }
-
-    .whatsapp {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0;
-      font-size: 30px;
-      color: #25D366;
-    }
-
-    .main-box {
-      background: rgba(0, 0, 0, 0.7);
-      margin: 100px auto;
-      padding: 30px;
-      max-width: 700px;
-      border-radius: 20px;
+    .logo {
       text-align: center;
     }
-
-    .main-box h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      color: #fff;
+    .logo img {
+      height: 60px;
     }
-
-    .main-box p {
-      font-size: 18px;
-      color: #ddd;
+    .welcome-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      max-width: 500px;
+      margin: 100px auto 0 auto;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <nav>
     <div class="nav-left">
-      <a href="about.html">About</a>
+      <a href="#">About</a>
     </div>
-    <div class="nav-center">
-      <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo">
+    
+    <div class="logo">
+      <img src="rajalodgelogo.png" alt="Raja Lodge Logo">
     </div>
+    
     <div class="nav-right">
-      <a href="contact.html">Contact</a>
+      <a href="contact.html">
+        <img src="https://img.icons8.com/color/24/000000/whatsapp.png" style="vertical-align: middle;">
+        Contact Us
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <div class="whatsapp">
-    <a href="https://wa.me/919843830181" title="Contact us on WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-
-  <div class="main-box">
-    <h1>Welcome to Raja Lodge</h1>
-    <p>Best stay experience in the heart of Ooty. 20 years of trusted service near the bus stand!</p>
+  <div class="welcome-box">
+    WELCOME TO RAJA LODGE
   </div>
 
 </body>
-</html>
+</html>      
