@@ -38,11 +38,11 @@
 
     form input, form textarea, form select {
       width: 100%;
-      padding: 8px;
-      border-radius: 8px;
+      padding: 10px;
       margin-bottom: 15px;
       border: none;
-      font-size: 14px;
+      border-radius: 10px;
+      font-size: 16px;
     }
 
     button {
@@ -51,6 +51,7 @@
       border: none;
       border-radius: 10px;
       font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
     }
 
@@ -69,15 +70,15 @@
     </div>
 
     <hr style="margin: 30px 0; border: 1px solid white;" />
-    <h3>📝 Share Your Experience</h3>
+    <h3>📝 Submit Your Review</h3>
     <form id="review-form">
-      <label for="name">Your Name:</label><br>
-      <input type="text" id="name" required /><br>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required />
 
-      <label for="review">Your Review:</label><br>
-      <textarea id="review" rows="4" required></textarea><br>
+      <label for="review">Your Review:</label>
+      <textarea id="review" rows="4" required></textarea>
 
-      <label for="rating">Rating:</label><br>
+      <label for="rating">Rating:</label>
       <select id="rating" required>
         <option value="">-- Select Stars --</option>
         <option value="5">⭐️⭐️⭐️⭐️⭐️ - Excellent</option>
@@ -85,7 +86,7 @@
         <option value="3">⭐️⭐️⭐️ - Average</option>
         <option value="2">⭐️⭐️ - Poor</option>
         <option value="1">⭐️ - Very Bad</option>
-      </select><br>
+      </select>
 
       <button type="submit">Submit Review</button>
     </form>
@@ -95,24 +96,23 @@
     const form = document.getElementById("review-form");
     const reviewList = document.getElementById("review-list");
 
-    // Load saved reviews on page load
+    // Load reviews from localStorage on page load
     window.onload = () => {
       const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
       savedReviews.forEach(displayReview);
     };
 
-    // Submit review
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      const name = document.getElementById("name").value;
-      const review = document.getElementById("review").value;
+      const name = document.getElementById("name").value.trim();
+      const review = document.getElementById("review").value.trim();
       const rating = document.getElementById("rating").value;
 
-      const reviewData = { name, review, rating };
+      if (!name || !review || !rating) return;
 
+      const reviewData = { name, review, rating };
       displayReview(reviewData);
 
-      // Save to local storage
       const existing = JSON.parse(localStorage.getItem("reviews")) || [];
       existing.push(reviewData);
       localStorage.setItem("reviews", JSON.stringify(existing));
@@ -120,12 +120,12 @@
       form.reset();
     });
 
-    // Show review on screen
     function displayReview({ name, review, rating }) {
       const div = document.createElement("div");
       div.classList.add("review");
-      div.innerHTML = `<strong>${name}</strong> - 
-        <span class="star">${"⭐️".repeat(rating)}</span>
+      div.innerHTML = `
+        <strong>${name}</strong> 
+        <div class="star">${'⭐️'.repeat(Number(rating))}</div>
         <p>${review}</p>`;
       reviewList.prepend(div);
     }
