@@ -1,180 +1,129 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Guest Reviews - Raja Lodge Ooty</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews | Raja Lodge</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    .navbar a {
-      color: white;
-      margin: 0 20px;
-      text-decoration: none;
-      font-size: 18px;
-    }
-
     .container {
-      background-color: rgba(0, 0, 0, 0.7);
-      margin: 50px auto;
-      padding: 30px;
       max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      margin-top: 40px;
     }
 
     h2 {
       text-align: center;
-      color: #fff;
       margin-bottom: 20px;
-    }
-
-    .review-box {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-
-    .stars {
-      color: gold;
-      font-size: 18px;
-      margin-bottom: 8px;
     }
 
     textarea {
       width: 100%;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 12px;
+      border-radius: 8px;
       border: none;
       resize: none;
-      height: 80px;
       font-size: 16px;
-      margin-bottom: 10px;
     }
 
-    .submit-btn {
-      background-color: gold;
+    button {
+      margin-top: 10px;
+      padding: 10px 25px;
+      border-radius: 5px;
+      background: gold;
       color: black;
-      padding: 10px 20px;
-      font-weight: bold;
       border: none;
-      border-radius: 8px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    .submit-btn:hover {
-      background-color: #f2c200;
+    .review-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .stars {
+      font-size: 2.5rem;
+      color: gold;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
 
-  <div class="navbar">
-    <a href="index.html">🏠 Home</a>
-    <a href="pricing.html">💰 Pricing</a>
-    <a href="gallery.html">🖼️ Gallery</a>
-    <a href="review.html">🌟 Reviews</a>
-    <a href="contact.html">📞 Contact</a>
-  </div>
-
   <div class="container">
-    <h2>⭐ Guest Reviews</h2>
+    <h2>Guest Reviews</h2>
 
-    <!-- Always visible sample reviews -->
-    <div class="review-box">
-      <div class="stars">★★★★★</div>
-      <p>"Peaceful stay with quick access to Ooty bus stand. Rooms were neat and budget-friendly!"</p>
-    </div>
-    <div class="review-box">
-      <div class="stars">★★★★★</div>
-      <p>"Great hospitality! The staff was kind and helpful throughout our stay. Highly recommend."</p>
-    </div>
-    <div class="review-box">
-      <div class="stars">★★★★★</div>
-      <p>"Perfect lodge for families. Affordable, clean, and very close to local attractions!"</p>
-    </div>
-    <div class="review-box">
-      <div class="stars">★★★★★</div>
-      <p>"I loved the scenic view from the room window. Felt like home. Thanks, Raja Lodge!"</p>
-    </div>
+    <textarea id="reviewInput" rows="4" placeholder="Write your review here..."></textarea>
+    <button onclick="submitReview()">Submit Review</button>
 
-    <!-- Live user reviews -->
     <div id="reviews"></div>
-
-    <!-- Review submission -->
-    <h2>📝 Share Your Experience</h2>
-    <textarea id="reviewInput" placeholder="Write your review here..."></textarea><br>
-    <button class="submit-btn" onclick="submitReview()">Submit Review ⭐⭐⭐⭐⭐</button>
   </div>
 
   <script>
+    const reviewsEl = document.getElementById("reviews");
+
+    const sampleReviews = [
+      "Had an amazing stay at Raja Lodge! Rooms were clean and service was great.",
+      "Perfect location and very friendly staff. Definitely recommend!",
+      "Budget-friendly and near the bus stand. Very convenient for tourists.",
+      "Loved the peaceful environment and quick room service!",
+      "Great experience, especially the tour package options they offer!"
+    ];
+
+    function displayReview(text) {
+      const reviewBox = document.createElement("div");
+      reviewBox.className = "review-box";
+      reviewBox.innerHTML = `
+        <div class="stars">★★★★★</div>
+        <p>${text}</p>`;
+      reviewsEl.prepend(reviewBox);
+    }
+
+    // Load saved reviews or show sample ones
+    window.onload = function () {
+      const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
+
+      if (saved.length === 0) {
+        sampleReviews.forEach(displayReview);
+      } else {
+        saved.forEach(displayReview);
+      }
+    };
+
     function submitReview() {
       const input = document.getElementById("reviewInput");
       const text = input.value.trim();
-      if (text === "") return alert("Please enter your review!");
+      if (text === "") return alert("Please write something!");
 
-      const reviewBox = document.createElement("div");
-      reviewBox.className = "review-box";
+      displayReview(text);
 
-      const stars = document.createElement("div");
-      stars.className = "stars";
-      stars.textContent = "★★★★★";
+      const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
+      saved.unshift(text);
+      localStorage.setItem("reviews", JSON.stringify(saved));
 
-      const para = document.createElement("p");
-      para.textContent = text;
-
-      reviewBox.appendChild(stars);
-      reviewBox.appendChild(para);
-
-      document.getElementById("reviews").prepend(reviewBox);
       input.value = "";
     }
-    <script>
-  // Load stored reviews when page loads
-  window.onload = function() {
-    const stored = JSON.parse(localStorage.getItem("reviews") || "[]");
-    const container = document.getElementById("reviews");
-
-    stored.forEach(text => {
-      const box = document.createElement("div");
-      box.className = "review-box";
-      box.innerHTML = `<div class="stars">★★★★★</div><p>${text}</p>`;
-      container.appendChild(box);
-    });
-  };
-
-  function submitReview() {
-    const input = document.getElementById("reviewInput");
-    const text = input.value.trim();
-    if (text === "") return alert("Please enter your review!");
-
-    const reviewBox = document.createElement("div");
-    reviewBox.className = "review-box";
-    reviewBox.innerHTML = `<div class="stars">★★★★★</div><p>${text}</p>`;
-
-    document.getElementById("reviews").prepend(reviewBox);
-
-    // Save to local storage
-    const stored = JSON.parse(localStorage.getItem("reviews") || "[]");
-    stored.unshift(text);
-    localStorage.setItem("reviews", JSON.stringify(stored));
-
-    input.value = "";
-  }
-</script>
   </script>
 </body>
 </html>
