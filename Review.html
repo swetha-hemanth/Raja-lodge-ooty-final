@@ -4,80 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reviews - Raja Lodge</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    .review-section {
-      background-color: #1c1c1c;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
     }
 
-    .review-section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .review-box {
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .glass-box {
+      background: rgba(0, 0, 0, 0.7);
       max-width: 800px;
-      margin: 0 auto 30px;
-      background-color: #2a2a2a;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .review-box h4 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      color: #fdd835;
+    .review {
+      margin-bottom: 25px;
+      border-bottom: 1px solid white;
+      padding-bottom: 15px;
     }
 
-    .stars {
-      color: #ffcc00;
-      font-size: 18px;
-      margin-bottom: 10px;
+    .review:last-child {
+      border-bottom: none;
     }
 
-    .review-box p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #ddd;
+    .review h3 {
+      margin: 0;
+      color: #f0c040;
+    }
+
+    .review p {
+      margin: 5px 0 0;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="IMG-20250721-WA0024.jpg" alt="Logo" style="width: 120px;" />
-    <nav>
-      <a href="index.html">🏠 Home</a>
-      <a href="pricing.html">💰 Pricing</a>
-      <a href="gallery.html">🖼️ Gallery</a>
-      <a href="reviews.html">⭐ Reviews</a>
-      <a href="contact.html">📞 Contact</a>
-    </nav>
-  </header>
 
-  <div class="review-section">
-    <h2>What Our Guests Say</h2>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="pricing.html">💰 Pricing</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="reviews.html">⭐ Reviews</a>
+    <a href="contact.html">📞 Contact</a>
+  </nav>
 
-    <div class="review-box">
-      <h4>Sneha R.</h4>
-      <div class="stars">★★★★★</div>
-      <p>Perfect stay near Ooty bus stand! The rooms were clean and staff were polite. Highly recommended for families.</p>
+  <div class="glass-box">
+    <h2 style="text-align:center;">⭐ Guest Reviews ⭐</h2>
+
+    <div class="review">
+      <h3>Arun Kumar</h3>
+      <p>"Amazing hospitality and clean rooms. Will surely visit again!"</p>
     </div>
 
-    <div class="review-box">
-      <h4>Arun Kumar</h4>
-      <div class="stars">★★★★☆</div>
-      <p>Very peaceful location and affordable pricing. Slight delay in check-in but everything else was smooth!</p>
+    <div class="review">
+      <h3>Divya R</h3>
+      <p>"Best location in Ooty near bus stand. The pricing was perfect for our family!"</p>
     </div>
 
-    <div class="review-box">
-      <h4>Priya & Friends</h4>
-      <div class="stars">★★★★★</div>
-      <p>We stayed in a triple bedroom. Great for groups! Hot water and Wi-Fi was available too. Budget-friendly and safe.</p>
+    <div class="review">
+      <h3>Rajesh M</h3>
+      <p>"The tour package they arranged was top notch. The vehicle was very comfortable."</p>
+    </div>
+
+    <div class="review">
+      <h3>Lakshmi Priya</h3>
+      <p>"We stayed for 3 nights — peaceful environment and helpful staff."</p>
     </div>
   </div>
+
 </body>
-</html>
+</html>      
