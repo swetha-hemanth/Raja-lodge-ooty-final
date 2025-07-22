@@ -1,96 +1,100 @@
-      <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raja Lodge Ooty</title>
+  <meta charset="UTF-8">
+  <title>Raja Lodge - Ooty</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
+      background: url('images/JMG-20250721-WA0040.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
-    header {
+    .navbar {
       background: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    nav {
-      backdrop-filter: blur(10px);
-      background: rgba(20, 20, 20, 0.5); /* Light black glass effect */
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      justify-content: space-around;
+      align-items: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    nav a {
+    .navbar a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1rem;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background 0.3s;
+      font-size: 18px;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
-      background: rgba(255, 255, 255, 0.1);
+    .navbar a:hover {
+      color: #ffd700;
     }
 
-    main {
-      padding: 2rem;
+    .header {
       text-align: center;
+      padding: 5rem 1rem;
+      background: rgba(0, 0, 0, 0.5);
     }
 
-    .contact {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      background-color: #25D366;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
+    .header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
     }
 
-    .contact:hover {
-      background-color: #128C7E;
+    .header p {
+      font-size: 20px;
+      color: #ddd;
+    }
+
+    .section {
+      background: rgba(0, 0, 0, 0.6);
+      margin: 2rem;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 1rem;
+      color: #ccc;
+      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to Raja Lodge, Ooty</h1>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="review.html">Review</a>
-    <a href="contact.html">📞 Contact Us</a>
+  <!-- 🧭 Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="pricing.html">💰 Pricing</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="review.html">🌟 Reviews</a>
+    <a href="contact.html">📞 Contact</a>
   </nav>
 
-  <main>
-    <h2>Experience comfort and elegance in the heart of Ooty 🌿</h2>
-    <p>Located near the bus stand, serving happy guests since 1980.</p>
-  </main>
+  <!-- 🏨 Welcome Section -->
+  <header class="header">
+    <h1>Welcome to Raja Lodge</h1>
+    <p>Serving guests with love and comfort for over 20 years in the heart of Ooty</p>
+  </header>
 
-  <a class="contact" href="https://wa.me/919843830181" target="_blank">WhatsApp Us</a>
-
-</body>
-</html>
+  <!-- 🌟 Highlight Section -->
+  <section class="section">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>📍 Prime Location - Near Bus Stand</li>
+      <li>🛏️ Affordable Rooms & Family Friendly</li>
+      <li>🚗 Easy Access to Tourist Spots</li>
+      <li>💬 Friendly   
