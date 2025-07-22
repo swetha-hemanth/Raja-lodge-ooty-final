@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -24,29 +24,29 @@
 
     /* Navbar */
     nav {
-      background-color: rgba(0, 0, 0, 0.75);
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 12px 20px;
       display: flex;
       justify-content: center;
       gap: 30px;
       position: sticky;
       top: 0;
-      z-index: 999;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      z-index: 100;
     }
 
     nav a {
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-size: 17px;
       font-weight: bold;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      font-size: 17px;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
+      border-radius: 5px;
     }
 
     nav a:hover {
-      background-color: rgba(255, 255, 255, 0.15);
+      background-color: #fff;
+      color: #000;
     }
 
     header {
@@ -65,4 +65,126 @@
       padding: 15px 20px;
       margin: 20px auto;
       width: 90%;
-      max-width: 500              
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      font-size: 22px;
+      letter-spacing: 1px;
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .header-box p {
+      margin-top: 6px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .middle-contact {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .middle-contact a {
+      background-color: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .middle-contact a:hover {
+      background-color: #1ebd5a;
+    }
+
+    section {
+      background-color: rgba(0, 0, 0, 0.7);
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 850px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+
+    section h3 {
+      margin-top: 0;
+      font-size: 26px;
+      border-bottom: 2px solid #aaa;
+      padding-bottom: 10px;
+    }
+
+    section p {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    @media (max-width: 600px) {
+      .welcome-text {
+        font-size: 18px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .middle-contact a {
+        font-size: 16px;
+        padding: 10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="review.html">Review</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Logo and Welcome -->
+  <header>
+    <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo" />
+
+    <div class="header-box">
+      <h2 class="welcome-text">WELCOME TO RAJA LODGE</h2>
+      <p>Comfortable and Affordable Stay in the Heart of Ooty</p>
+    </div>
+  </header>
+
+  <!-- WhatsApp Contact Button in center -->
+  <div class="middle-contact">
+    <a href="https://wa.me/9843830181" target="_blank">
+      <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
+    </a>
+  </div>
+
+  <!-- About Us Section -->
+  <section>
+    <h3>About Us</h3>
+    <p>
+      Raja Lodge has been proudly serving travelers for over 20 years with clean rooms, friendly staff, and a peaceful environment.
+      Located right near the Ooty Bus Stand, our lodge is the perfect place for families and tourists who want comfort and convenience.
+      Whether you're visiting for a weekend or an extended stay, we ensure a pleasant experience with budget-friendly rates and warm hospitality.
+    </p>
+  </section>
+
+</body>
+</html>
