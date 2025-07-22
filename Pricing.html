@@ -1,51 +1,76 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pricing - Raja Lodge</title>
+  <title>Raja Lodge - Pricing</title>
   <style>
     body {
-      background: url('ooty_background.jpg') no-repeat center center fixed;
-      background-size: cover;
       font-family: 'Segoe UI', sans-serif;
-      color: #fff;
       margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
     }
+
     nav {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: #004d40;
       padding: 15px;
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      font-size: 16px;
     }
-    .content {
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 50px auto;
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
       padding: 20px;
-      max-width: 700px;
-      border-radius: 15px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 20px;
-      color: #ffd700;
+      color: #004d40;
+      margin-bottom: 30px;
     }
+
+    h2 {
+      color: #00796b;
+      margin-top: 30px;
+    }
+
     ul {
-      list-style: none;
-      padding-left: 0;
+      padding-left: 20px;
+      line-height: 1.8;
     }
+
     li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background-color: #e0f2f1;
+      padding: 8px 12px;
+      border-left: 4px solid #00796b;
+      margin-bottom: 15px;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html">🏠 Home</a>
     <a href="pricing.html">💰 Pricing</a>
@@ -54,36 +79,45 @@
     <a href="contact.html">📞 Contact</a>
   </nav>
 
-  <div class="content">
+  <div class="container">
     <h1>Room Pricing</h1>
+
+    <h2>Weekday Pricing</h2>
     <ul>
-      <li>Normal price (1 person): ₹600</li>
-      <li>Weekend price (1 person): ₹700</li>
-      <li>Standard room (2 persons): ₹700 (Weekdays), ₹900 (Weekends)</li>
-      <li>Deluxe room (2 persons): ₹900 (Weekdays), ₹1200 (Weekends)</li>
-      <li>Triple room (4 persons): ₹1000 (Weekdays), ₹1400 (Weekends)</li>
+      <li>Single Person: ₹600</li>
+      <li>Standard Room (2 persons): ₹700</li>
+      <li>Deluxe Room (2 persons): ₹900</li>
+      <li>Triple Bedroom (4 persons): ₹1000</li>
     </ul>
 
-    <h1>Season Pricing (Apr 1 - Jun 10)</h1>
+    <h2>Weekend Pricing</h2>
     <ul>
-      <li>Standard (1 person): ₹1000</li>
-      <li>Standard (2 persons): ₹1200</li>
-      <li>Deluxe (2 persons): ₹1500</li>
-      <li>Triple (4 persons): ₹1800</li>
+      <li>Single Person: ₹700</li>
+      <li>Standard Room (2 persons): ₹900</li>
+      <li>Deluxe Room (2 persons): ₹1200</li>
+      <li>Triple Bedroom (4 persons): ₹1400</li>
     </ul>
 
-    <h1>Holiday/Peak Weekend Rates</h1>
+    <h2>Seasonal Pricing (Apr 1 – Jun 10)</h2>
     <ul>
-      <li>Standard (1 person): ₹1500</li>
-      <li>Deluxe (2 persons): ₹2300</li>
-      <li>Triple (4 persons): ₹2500</li>
+      <li>Standard Room (1 person): ₹1000</li>
+      <li>Standard Room (2 persons): ₹1200</li>
+      <li>Deluxe Room (2 persons): ₹1500</li>
+      <li>Triple Bedroom (4 persons): ₹1800</li>
     </ul>
 
-    <h1>Tour Packages</h1>
+    <h2>Peak Weekend/Holidays</h2>
     <ul>
-      <li>Sightseeing available for Ooty, Coonoor & Filmy Chakkar</li>
-      <li>Vehicle: Swaraj Mazda Van</li>
+      <li>Standard Room (1 person): ₹1500</li>
+      <li>Deluxe Room (2 persons): ₹2300</li>
+      <li>Triple Bedroom (4 persons): ₹2500</li>
     </ul>
+
+    <div class="highlight">
+      🚐 Tour Package Vehicle available for Ooty, Coonoor, and Filmy Chakkar<br>
+      Vehicle Type: Swaraj Mazda Van
+    </div>
   </div>
+
 </body>
 </html>
