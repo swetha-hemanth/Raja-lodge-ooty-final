@@ -1,133 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reviews – Raja Lodge Ooty</title>
+  <meta charset="UTF-8">
+  <title>Guest Reviews - Raja Lodge Ooty</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url("bg.jpg") no-repeat center center fixed;
+      background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
     }
 
-    .glass-box {
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .navbar a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .container {
       background-color: rgba(0, 0, 0, 0.7);
       margin: 50px auto;
       padding: 30px;
-      border-radius: 20px;
-      max-width: 700px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
 
-    h2, h3 {
+    h2 {
       text-align: center;
+      color: #fff;
       margin-bottom: 20px;
     }
 
-    .review {
-      border-bottom: 1px solid white;
-      padding: 10px 0;
+    .review-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
 
-    form label {
-      font-weight: bold;
+    .stars {
+      color: gold;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
-    form input, form textarea, form select {
+    textarea {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
-      border: none;
       border-radius: 10px;
+      border: none;
+      resize: none;
+      height: 80px;
       font-size: 16px;
+      margin-bottom: 10px;
     }
 
-    button {
+    .submit-btn {
+      background-color: gold;
+      color: black;
       padding: 10px 20px;
-      background-color: #f0c040;
-      border: none;
-      border-radius: 10px;
       font-weight: bold;
-      font-size: 16px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
 
-    .star {
-      color: gold;
-      font-size: 18px;
+    .submit-btn:hover {
+      background-color: #f2c200;
     }
   </style>
 </head>
 <body>
-  <div class="glass-box">
-    <h2>🌟 Guest Reviews</h2>
 
-    <div id="review-list">
-      <!-- JavaScript will insert reviews here -->
+  <div class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="pricing.html">💰 Pricing</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="review.html">🌟 Reviews</a>
+    <a href="contact.html">📞 Contact</a>
+  </div>
+
+  <div class="container">
+    <h2>⭐ Guest Reviews</h2>
+
+    <!-- Always visible sample reviews -->
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>"Peaceful stay with quick access to Ooty bus stand. Rooms were neat and budget-friendly!"</p>
+    </div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>"Great hospitality! The staff was kind and helpful throughout our stay. Highly recommend."</p>
+    </div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>"Perfect lodge for families. Affordable, clean, and very close to local attractions!"</p>
+    </div>
+    <div class="review-box">
+      <div class="stars">★★★★★</div>
+      <p>"I loved the scenic view from the room window. Felt like home. Thanks, Raja Lodge!"</p>
     </div>
 
-    <hr style="margin: 30px 0; border: 1px solid white;" />
-    <h3>📝 Submit Your Review</h3>
-    <form id="review-form">
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" required />
+    <!-- Live user reviews -->
+    <div id="reviews"></div>
 
-      <label for="review">Your Review:</label>
-      <textarea id="review" rows="4" required></textarea>
-
-      <label for="rating">Rating:</label>
-      <select id="rating" required>
-        <option value="">-- Select Stars --</option>
-        <option value="5">⭐️⭐️⭐️⭐️⭐️ - Excellent</option>
-        <option value="4">⭐️⭐️⭐️⭐️ - Good</option>
-        <option value="3">⭐️⭐️⭐️ - Average</option>
-        <option value="2">⭐️⭐️ - Poor</option>
-        <option value="1">⭐️ - Very Bad</option>
-      </select>
-
-      <button type="submit">Submit Review</button>
-    </form>
+    <!-- Review submission -->
+    <h2>📝 Share Your Experience</h2>
+    <textarea id="reviewInput" placeholder="Write your review here..."></textarea><br>
+    <button class="submit-btn" onclick="submitReview()">Submit Review ⭐⭐⭐⭐⭐</button>
   </div>
 
   <script>
-    const form = document.getElementById("review-form");
-    const reviewList = document.getElementById("review-list");
+    function submitReview() {
+      const input = document.getElementById("reviewInput");
+      const text = input.value.trim();
+      if (text === "") return alert("Please enter your review!");
 
-    // Load reviews from localStorage on page load
-    window.onload = () => {
-      const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
-      savedReviews.forEach(displayReview);
-    };
+      const reviewBox = document.createElement("div");
+      reviewBox.className = "review-box";
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const review = document.getElementById("review").value.trim();
-      const rating = document.getElementById("rating").value;
+      const stars = document.createElement("div");
+      stars.className = "stars";
+      stars.textContent = "★★★★★";
 
-      if (!name || !review || !rating) return;
+      const para = document.createElement("p");
+      para.textContent = text;
 
-      const reviewData = { name, review, rating };
-      displayReview(reviewData);
+      reviewBox.appendChild(stars);
+      reviewBox.appendChild(para);
 
-      const existing = JSON.parse(localStorage.getItem("reviews")) || [];
-      existing.push(reviewData);
-      localStorage.setItem("reviews", JSON.stringify(existing));
-
-      form.reset();
-    });
-
-    function displayReview({ name, review, rating }) {
-      const div = document.createElement("div");
-      div.classList.add("review");
-      div.innerHTML = `
-        <strong>${name}</strong> 
-        <div class="star">${'⭐️'.repeat(Number(rating))}</div>
-        <p>${review}</p>`;
-      reviewList.prepend(div);
+      document.getElementById("reviews").prepend(reviewBox);
+      input.value = "";
     }
   </script>
 </body>
