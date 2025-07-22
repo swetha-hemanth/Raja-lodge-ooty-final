@@ -5,24 +5,24 @@
   <title>Raja Lodge - Pricing</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f2f2f2;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
     }
 
     nav {
-      background-color: #004d40;
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
+      text-align: center;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
       font-size: 16px;
     }
@@ -34,25 +34,20 @@
     .container {
       max-width: 900px;
       margin: 40px auto;
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
-    h1 {
+    h1, h2 {
+      color: #fff;
       text-align: center;
-      color: #004d40;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      color: #00796b;
-      margin-top: 30px;
+      margin-bottom: 20px;
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 25px;
       line-height: 1.8;
     }
 
@@ -61,11 +56,18 @@
     }
 
     .highlight {
-      background-color: #e0f2f1;
-      padding: 8px 12px;
-      border-left: 4px solid #00796b;
-      margin-bottom: 15px;
-      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      margin-top: 20px;
+      border-left: 4px solid #00e676;
+      border-radius: 8px;
+    }
+
+    @media screen and (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
@@ -82,7 +84,7 @@
   <div class="container">
     <h1>Room Pricing</h1>
 
-    <h2>Weekday Pricing</h2>
+    <h2>Weekday Rates</h2>
     <ul>
       <li>Single Person: ₹600</li>
       <li>Standard Room (2 persons): ₹700</li>
@@ -90,7 +92,7 @@
       <li>Triple Bedroom (4 persons): ₹1000</li>
     </ul>
 
-    <h2>Weekend Pricing</h2>
+    <h2>Weekend Rates</h2>
     <ul>
       <li>Single Person: ₹700</li>
       <li>Standard Room (2 persons): ₹900</li>
@@ -106,7 +108,7 @@
       <li>Triple Bedroom (4 persons): ₹1800</li>
     </ul>
 
-    <h2>Peak Weekend/Holidays</h2>
+    <h2>Peak Weekends / Holidays</h2>
     <ul>
       <li>Standard Room (1 person): ₹1500</li>
       <li>Deluxe Room (2 persons): ₹2300</li>
@@ -114,8 +116,8 @@
     </ul>
 
     <div class="highlight">
-      🚐 Tour Package Vehicle available for Ooty, Coonoor, and Filmy Chakkar<br>
-      Vehicle Type: Swaraj Mazda Van
+      🚐 <strong>Tour Package:</strong> Ooty, Coonoor, Filmy Chakkar<br>
+      Vehicle: Swaraj Mazda Van
     </div>
   </div>
 
