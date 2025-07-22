@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -36,7 +36,7 @@
     .header-box {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 15px 20px;
-      margin: 20px auto;
+      margin: 20px auto 10px;
       width: 90%;
       max-width: 500px;
       border-radius: 12px;
@@ -59,7 +59,34 @@
       color: #ccc;
     }
 
-    /* WhatsApp Button between welcome and about */
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 12px 20px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* WhatsApp Button */
     .middle-contact {
       text-align: center;
       margin: 30px 0;
@@ -117,6 +144,15 @@
         font-size: 16px;
         padding: 10px 15px;
       }
+
+      .navbar {
+        gap: 15px;
+      }
+
+      .navbar a {
+        font-size: 14px;
+        padding: 8px 10px;
+      }
     }
   </style>
 </head>
@@ -125,14 +161,23 @@
   <!-- Logo and Welcome -->
   <header>
     <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo" />
-
     <div class="header-box">
       <h2 class="welcome-text">WELCOME TO RAJA LODGE</h2>
       <p>Comfortable and Affordable Stay in the Heart of Ooty</p>
     </div>
   </header>
 
-  <!-- WhatsApp Contact Button in center -->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#">🏠 Home</a>
+    <a href="#">💰 Pricing</a>
+    <a href="#">🛏️ Booking</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="#">🖼️ Gallery</a>
+    <a href="#">⭐ Review</a>
+  </nav>
+
+  <!-- WhatsApp Contact Button -->
   <div class="middle-contact">
     <a href="https://wa.me/9843830181" target="_blank">
       <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
@@ -151,3 +196,4 @@
 
 </body>
 </html>
+    
