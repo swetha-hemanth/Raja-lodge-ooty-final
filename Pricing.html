@@ -1,138 +1,89 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pricing - Raja Lodge Ooty</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
+  <meta charset="UTF-8">
+  <title>Pricing - Raja Lodge</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #111, #333);
+      background: url('ooty_background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
       color: #fff;
+      margin: 0;
     }
-
-    header {
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 15px;
+    }
+    h1 {
       text-align: center;
-      padding: 30px 20px;
+      margin-bottom: 20px;
+      color: #ffd700;
     }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    section {
-      background-color: rgba(255, 255, 255, 0.05);
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 850px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    h2 {
-      border-bottom: 2px solid #888;
-      padding-bottom: 8px;
-      font-size: 24px;
-      margin-top: 0;
-    }
-
     ul {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
     }
-
-    ul li {
-      margin: 8px 0;
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-    .van-info {
-      margin-top: 25px;
-      padding-top: 15px;
-      border-top: 1px dashed #777;
-      font-style: italic;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 26px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      ul li {
-        font-size: 16px;
-      }
+    li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="pricing.html">💰 Pricing</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="reviews.html">⭐ Reviews</a>
+    <a href="contact.html">📞 Contact</a>
+  </nav>
 
-  <header>
+  <div class="content">
     <h1>Room Pricing</h1>
-    <p>Affordable Rates for Every Season</p>
-  </header>
-
-  <section>
-    <h2>Weekday Rates (Mon–Thu)</h2>
     <ul>
-      <li>Single Room: ₹600</li>
-      <li>Standard Room (2 Persons): ₹700</li>
-      <li>Deluxe Room (2 Persons): ₹900</li>
-      <li>Triple Bedroom (4 Persons): ₹1000</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Weekend Rates (Fri–Sun)</h2>
-    <ul>
-      <li>Single Room: ₹700</li>
-      <li>Standard Room (2 Persons): ₹900</li>
-      <li>Deluxe Room (2 Persons): ₹1200</li>
-      <li>Triple Bedroom (4 Persons): ₹1400</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Seasonal Rates (April 1 – June 10)</h2>
-
-    <strong>Weekdays:</strong>
-    <ul>
-      <li>Standard Room (1 Person): ₹1000</li>
-      <li>Standard Room (2 Persons): ₹1200</li>
-      <li>Deluxe Room (2 Persons): ₹1500</li>
-      <li>Triple Bedroom (4 Persons): ₹1800</li>
+      <li>Normal price (1 person): ₹600</li>
+      <li>Weekend price (1 person): ₹700</li>
+      <li>Standard room (2 persons): ₹700 (Weekdays), ₹900 (Weekends)</li>
+      <li>Deluxe room (2 persons): ₹900 (Weekdays), ₹1200 (Weekends)</li>
+      <li>Triple room (4 persons): ₹1000 (Weekdays), ₹1400 (Weekends)</li>
     </ul>
 
-    <strong>Weekends & Holidays:</strong>
+    <h1>Season Pricing (Apr 1 - Jun 10)</h1>
     <ul>
-      <li>Standard Room (1 Person): ₹1500</li>
-      <li>Deluxe Room (2 Persons): ₹2300</li>
-      <li>Triple Bedroom (4 Persons): ₹2500</li>
+      <li>Standard (1 person): ₹1000</li>
+      <li>Standard (2 persons): ₹1200</li>
+      <li>Deluxe (2 persons): ₹1500</li>
+      <li>Triple (4 persons): ₹1800</li>
     </ul>
-  </section>
 
-  <section class="van-info">
-    <h2>Tour Package</h2>
-    <p>
-      Vehicle Available: <strong>Swaraj Mazda Van</strong><br/>
-      For Ooty, Coonoor, and Filmy Chakkar Tours
-    </p>
-  </section>
+    <h1>Holiday/Peak Weekend Rates</h1>
+    <ul>
+      <li>Standard (1 person): ₹1500</li>
+      <li>Deluxe (2 persons): ₹2300</li>
+      <li>Triple (4 persons): ₹2500</li>
+    </ul>
 
+    <h1>Tour Packages</h1>
+    <ul>
+      <li>Sightseeing available for Ooty, Coonoor & Filmy Chakkar</li>
+      <li>Vehicle: Swaraj Mazda Van</li>
+    </ul>
+  </div>
 </body>
 </html>
