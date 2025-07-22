@@ -30,7 +30,7 @@
       font-size: 2rem;
     }
 
-    input, textarea, select {
+    input, textarea {
       width: 100%;
       padding: 12px;
       border-radius: 8px;
@@ -103,15 +103,7 @@
     <h2>Guest Reviews</h2>
 
     <input type="text" id="nameInput" placeholder="Enter your name" />
-    
-    <select id="ratingInput">
-      <option value="5">★★★★★ (5 stars)</option>
-      <option value="4">★★★★☆ (4 stars)</option>
-      <option value="3">★★★☆☆ (3 stars)</option>
-      <option value="2">★★☆☆☆ (2 stars)</option>
-      <option value="1">★☆☆☆☆ (1 star)</option>
-    </select>
-
+    <input type="number" id="ratingInput" placeholder="Enter star rating (1-5)" min="1" max="5" />
     <textarea id="reviewInput" rows="4" placeholder="Write your review here..."></textarea>
     
     <button onclick="submitReview()">Submit Review</button>
@@ -153,10 +145,9 @@
       reviewsEl.prepend(reviewBox);
     }
 
-    // Load saved reviews or sample
+    // Load saved reviews or show samples
     window.onload = function () {
       const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
-
       if (saved.length === 0) {
         sampleReviews.forEach(r => displayReview(r.text, r.name, r.rating));
       } else {
@@ -173,6 +164,10 @@
         alert("Please write a review!");
         return;
       }
+      if (isNaN(rating) || rating < 1 || rating > 5) {
+        alert("Please enter a star rating between 1 and 5.");
+        return;
+      }
 
       displayReview(text, name, rating);
 
@@ -182,7 +177,7 @@
 
       document.getElementById("reviewInput").value = "";
       document.getElementById("nameInput").value = "";
-      document.getElementById("ratingInput").value = "5";
+      document.getElementById("ratingInput").value = "";
     }
   </script>
 </body>
