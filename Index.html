@@ -1,153 +1,80 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Raja Lodge Ooty</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome for WhatsApp Icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
+  <meta charset="UTF-8">
+  <title>Raja Lodge - Ooty</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-image: url('67e47f889e-7mlrs5cjblqv1l3ar6hhr01qy15ddj5hk2 (1).png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fff;
-    }
-
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-
-    header img {
-      width: 150px;
-      height: auto;
-      background: transparent;
-    }
-
-    .header-box {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 15px 20px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      text-align: center;
-    }
-
-    .welcome-text {
-      font-family: 'Playfair Display', serif;
-      text-transform: uppercase;
-      font-size: 22px;
-      letter-spacing: 1px;
-      margin: 0;
-      color: #ffffff;
-    }
-
-    .header-box p {
-      margin-top: 6px;
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    /* WhatsApp Button between welcome and about */
-    .middle-contact {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    .middle-contact a {
-      background-color: #25D366;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('67e47f889e-7mlrs5cjblqv1l3ar6hhr01qy15ddj5hk2 (1).png') no-repeat center center/cover;
+      height: 100vh;
       color: white;
-      padding: 12px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      display: inline-flex;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 30px;
     }
-
-    .middle-contact a:hover {
-      background-color: #1ebd5a;
+    .logo img {
+      height: 60px;
     }
-
-    /* About section */
-    section {
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    .whatsapp-icon {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(0,0,0,0.6);
+      padding: 5px 10px;
+      border-radius: 20px;
+    }
+    .whatsapp-icon img {
+      height: 20px;
+    }
+    .welcome-box {
       background-color: rgba(0, 0, 0, 0.7);
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 850px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    }
-
-    section h3 {
-      margin-top: 0;
-      font-size: 26px;
-      border-bottom: 2px solid #aaa;
-      padding-bottom: 10px;
-    }
-
-    section p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      .welcome-text {
-        font-size: 18px;
-      }
-
-      .middle-contact a {
-        font-size: 16px;
-        padding: 10px 15px;
-      }
+      padding: 20px 40px;
+      max-width: 500px;
+      margin: 150px auto 0 auto;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo and Welcome -->
   <header>
-    <img src="IMG-20250721-WA0024.jpg" alt="Raja Lodge Logo" />
-
-    <div class="header-box">
-      <h2 class="welcome-text">WELCOME TO RAJA LODGE</h2>
-      <p>Comfortable and Affordable Stay in the Heart of Ooty</p>
+    <div class="logo">
+      <img src="rajalodgelogo.png" alt="Raja Lodge Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#">About</a>
+      <a href="contact.html" class="whatsapp-icon">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp" />
+        Contact Us
+      </a>
     </div>
   </header>
 
-  <!-- WhatsApp Contact Button in center -->
-  <div class="middle-contact">
-    <a href="https://wa.me/9843830181" target="_blank">
-      <i class="fab fa-whatsapp"></i> Contact Us on WhatsApp
-    </a>
+  <div class="welcome-box">
+    WELCOME TO RAJA LODGE
   </div>
-
-  <!-- About Us Section -->
-  <section>
-    <h3>About Us</h3>
-    <p>
-      Raja Lodge has been proudly serving travelers for over 20 years with clean rooms, friendly staff, and a peaceful environment.
-      Located right near the Ooty Bus Stand, our lodge is the perfect place for families and tourists who want comfort and convenience.
-      Whether you're visiting for a weekend or an extended stay, we ensure a pleasant experience with budget-friendly rates and warm hospitality.
-    </p>
-  </section>
 
 </body>
 </html>
