@@ -1,210 +1,68 @@
-            <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Raja Lodge - Ooty</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raja Lodge Ooty</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for WhatsApp Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('images/JMG-20250721-WA0040.jpg') no-repeat center center fixed;
+      background-image: url('67e47f889e-7mlrs5cjblqv1l3ar6hhr01qy15ddj5hk2 (1).png');
       background-size: cover;
-      color: white;
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
     }
 
-    /* Navigation Bar */
-    .navbar {
-      background: rgba(0, 0, 0, 0.7);
+    /* Navbar */
+    nav {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 12px 20px;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 1rem;
+      justify-content: center;
+      gap: 30px;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
     }
 
-    .navbar a {
+    nav a {
       color: white;
       text-decoration: none;
+      font-size: 17px;
       font-weight: bold;
-      font-size: 18px;
-      transition: color 0.3s;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
     }
 
-    .navbar a:hover {
-      color: #ffd700;
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.15);
     }
 
-    /* Header */
-    .header {
+    header {
       text-align: center;
-      padding: 3rem 1rem;
-      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
     }
 
-    .header h1 {
-      font-size: 48px;
+    header img {
+      width: 150px;
+      height: auto;
+      background: transparent;
     }
 
-    .header p {
-      font-size: 20px;
-      color: #ddd;
-    }
-
-    /* Guest Reviews Title */
-    .guest-review-title {
-      text-align: center;
-      font-size: 28px;
-      margin-top: 40px;
-    }
-
-    /* Review Marquee */
-    .marquee {
-      background: rgba(0, 0, 0, 0.6);
-      margin: 2rem auto;
-      padding: 1rem;
+    .header-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px 20px;
+      margin: 20px auto;
       width: 90%;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .marquee-content {
-      display: flex;
-      animation: scroll 20s linear infinite;
-    }
-
-    @keyframes scroll {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .review-box {
-      min-width: 300px;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 0 1rem;
-      padding: 1rem;
-      border-radius: 10px;
-    }
-
-    .review-name {
-      font-weight: bold;
-      font-size: 18px;
-      color: #ffd700;
-    }
-
-    .stars {
-      font-size: 28px;
-      color: gold;
-      text-align: center;
-    }
-
-    /* Review Form */
-    .review-form {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 1rem;
-      width: 90%;
-      max-width: 500px;
-      margin: 2rem auto;
-      border-radius: 10px;
-    }
-
-    .review-form input,
-    .review-form textarea,
-    .review-form select {
-      width: 100%;
-      padding: 10px;
-      margin: 0.5rem 0;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .review-form button {
-      padding: 10px 20px;
-      background: #ffd700;
-      border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .footer {
-      background: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      padding: 1rem;
-      color: #ccc;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <a href="index.html">🏠 Home</a>
-    <a href="pricing.html">💰 Pricing</a>
-    <a href="gallery.html">🖼️ Gallery</a>
-    <a href="review.html">🌟 Reviews</a>
-    <a href="contact.html">📞 Contact</a>
-  </nav>
-
-  <!-- Header -->
-  <header class="header">
-    <h1>Welcome to Raja Lodge</h1>
-    <p>Serving guests for 20+ years in Ooty with comfort & care</p>
-  </header>
-
-  <!-- Guest Review Heading -->
-  <div class="guest-review-title">💬 Guest Reviews</div>
-
-  <!-- Review Marquee -->
-  <div class="marquee">
-    <div class="marquee-content">
-      <div class="review-box">
-        <div class="review-name">Swetha</div>
-        <p>Excellent stay, felt like home!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="review-box">
-        <div class="review-name">Anand</div>
-        <p>Location is perfect and very clean</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="review-box">
-        <div class="review-name">Priya</div>
-        <p>Staff were very helpful and polite</p>
-        <div class="stars">★★★★☆</div>
-      </div>
-      <div class="review-box">
-        <div class="review-name">Karthik</div>
-        <p>Affordable and peaceful, highly recommend!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Review Form -->
-  <div class="review-form">
-    <h2 style="text-align:center;">Leave a Review</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <textarea rows="4" placeholder="Your Review" required></textarea>
-      <select required>
-        <option value="">Select Rating</option>
-        <option>⭐</option>
-        <option>⭐⭐</option>
-        <option>⭐⭐⭐</option>
-        <option>⭐⭐⭐⭐</option>
-        <option>⭐⭐⭐⭐⭐</option>
-      </select>
-      <button type="submit">Submit Review</button>
-    </form>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    &copy; 2025 Raja Lodge, Ooty. All rights reserved.
-  </footer>
-
-</body>
-</html>
+      max-width: 500              
