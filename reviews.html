@@ -1,9 +1,9 @@
-    <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reviews | Raja Lodge</title>
+  <title>Guest Reviews | Raja Lodge</title>
   <style>
     body {
       margin: 0;
@@ -26,6 +26,7 @@
     h2 {
       text-align: center;
       margin-bottom: 20px;
+      font-size: 2rem;
     }
 
     textarea {
@@ -55,17 +56,43 @@
       margin: 1rem 0;
       backdrop-filter: blur(10px);
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
-      text-align: center;
     }
 
     .stars {
       font-size: 2.5rem;
       color: gold;
-      margin-bottom: 0.5rem;
+      text-align: center;
     }
 
-    p {
+    .review-text {
       font-size: 16px;
+      text-align: center;
+    }
+
+    .name {
+      margin-top: 0.5rem;
+      font-style: italic;
+      text-align: right;
+    }
+
+    /* Marquee styles */
+    .marquee-container {
+      background: rgba(255, 255, 255, 0.1);
+      margin-top: 30px;
+      padding: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee {
+      display: inline-block;
+      animation: scroll 30s linear infinite;
+      font-size: 1rem;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
@@ -80,34 +107,44 @@
     <div id="reviews"></div>
   </div>
 
+  <!-- Running reviews (sample) -->
+  <div class="marquee-container">
+    <div class="marquee" id="marqueeContent">
+      ⭐⭐⭐⭐⭐ Amazing stay and peaceful vibes - Priya &nbsp;&nbsp;&nbsp; 
+      ⭐⭐⭐⭐⭐ Very clean and affordable place - Anil &nbsp;&nbsp;&nbsp;
+      ⭐⭐⭐⭐⭐ Super friendly staff and nice rooms - Kavitha &nbsp;&nbsp;&nbsp;
+      ⭐⭐⭐⭐⭐ Perfect spot near bus stand - John
+    </div>
+  </div>
+
   <script>
     const reviewsEl = document.getElementById("reviews");
 
     const sampleReviews = [
-      "Had an amazing stay at Raja Lodge! Rooms were clean and service was great.",
-      "Perfect location and very friendly staff. Definitely recommend!",
-      "Budget-friendly and near the bus stand. Very convenient for tourists.",
-      "Loved the peaceful environment and quick room service!",
-      "Great experience, especially the tour package options they offer!"
+      { text: "Amazing stay and peaceful vibes", name: "Priya" },
+      { text: "Very clean and affordable place", name: "Anil" },
+      { text: "Super friendly staff and nice rooms", name: "Kavitha" },
+      { text: "Perfect spot near bus stand", name: "John" }
     ];
 
-    function displayReview(text) {
+    function displayReview(text, name = "Guest") {
       const reviewBox = document.createElement("div");
       reviewBox.className = "review-box";
       reviewBox.innerHTML = `
         <div class="stars">★★★★★</div>
-        <p>${text}</p>`;
+        <div class="review-text">${text}</div>
+        <div class="name">- ${name}</div>`;
       reviewsEl.prepend(reviewBox);
     }
 
-    // Load saved reviews or show sample ones
+    // Load saved reviews or show sample
     window.onload = function () {
       const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
 
       if (saved.length === 0) {
-        sampleReviews.forEach(displayReview);
+        sampleReviews.forEach(r => displayReview(r.text, r.name));
       } else {
-        saved.forEach(displayReview);
+        saved.forEach(r => displayReview(r.text, r.name));
       }
     };
 
@@ -119,7 +156,7 @@
       displayReview(text);
 
       const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
-      saved.unshift(text);
+      saved.unshift({ text: text, name: "Guest" });
       localStorage.setItem("reviews", JSON.stringify(saved));
 
       input.value = "";
