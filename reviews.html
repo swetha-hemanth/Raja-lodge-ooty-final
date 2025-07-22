@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -29,13 +30,14 @@
       font-size: 2rem;
     }
 
-    textarea {
+    input, textarea, select {
       width: 100%;
       padding: 12px;
       border-radius: 8px;
       border: none;
       resize: none;
       font-size: 16px;
+      margin-top: 10px;
     }
 
     button {
@@ -59,7 +61,7 @@
     }
 
     .stars {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: gold;
       text-align: center;
     }
@@ -75,7 +77,6 @@
       text-align: right;
     }
 
-    /* Marquee styles */
     .marquee-container {
       background: rgba(255, 255, 255, 0.1);
       margin-top: 30px;
@@ -101,13 +102,24 @@
   <div class="container">
     <h2>Guest Reviews</h2>
 
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    
+    <select id="ratingInput">
+      <option value="5">★★★★★ (5 stars)</option>
+      <option value="4">★★★★☆ (4 stars)</option>
+      <option value="3">★★★☆☆ (3 stars)</option>
+      <option value="2">★★☆☆☆ (2 stars)</option>
+      <option value="1">★☆☆☆☆ (1 star)</option>
+    </select>
+
     <textarea id="reviewInput" rows="4" placeholder="Write your review here..."></textarea>
+    
     <button onclick="submitReview()">Submit Review</button>
 
     <div id="reviews"></div>
   </div>
 
-  <!-- Running reviews (sample) -->
+  <!-- Running reviews at bottom -->
   <div class="marquee-container">
     <div class="marquee" id="marqueeContent">
       ⭐⭐⭐⭐⭐ Amazing stay and peaceful vibes - Priya &nbsp;&nbsp;&nbsp; 
@@ -121,45 +133,56 @@
     const reviewsEl = document.getElementById("reviews");
 
     const sampleReviews = [
-      { text: "Amazing stay and peaceful vibes", name: "Priya" },
-      { text: "Very clean and affordable place", name: "Anil" },
-      { text: "Super friendly staff and nice rooms", name: "Kavitha" },
-      { text: "Perfect spot near bus stand", name: "John" }
+      { text: "Amazing stay and peaceful vibes", name: "Priya", rating: 5 },
+      { text: "Very clean and affordable place", name: "Anil", rating: 5 },
+      { text: "Super friendly staff and nice rooms", name: "Kavitha", rating: 5 },
+      { text: "Perfect spot near bus stand", name: "John", rating: 5 }
     ];
 
-    function displayReview(text, name = "Guest") {
+    function getStars(rating) {
+      return "★".repeat(rating) + "☆".repeat(5 - rating);
+    }
+
+    function displayReview(text, name, rating) {
       const reviewBox = document.createElement("div");
       reviewBox.className = "review-box";
       reviewBox.innerHTML = `
-        <div class="stars">★★★★★</div>
+        <div class="stars">${getStars(rating)}</div>
         <div class="review-text">${text}</div>
         <div class="name">- ${name}</div>`;
       reviewsEl.prepend(reviewBox);
     }
 
-    // Load saved reviews or show sample
+    // Load saved reviews or sample
     window.onload = function () {
       const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
 
       if (saved.length === 0) {
-        sampleReviews.forEach(r => displayReview(r.text, r.name));
+        sampleReviews.forEach(r => displayReview(r.text, r.name, r.rating));
       } else {
-        saved.forEach(r => displayReview(r.text, r.name));
+        saved.forEach(r => displayReview(r.text, r.name, r.rating));
       }
     };
 
     function submitReview() {
-      const input = document.getElementById("reviewInput");
-      const text = input.value.trim();
-      if (text === "") return alert("Please write something!");
+      const name = document.getElementById("nameInput").value.trim() || "Guest";
+      const text = document.getElementById("reviewInput").value.trim();
+      const rating = parseInt(document.getElementById("ratingInput").value);
 
-      displayReview(text);
+      if (text === "") {
+        alert("Please write a review!");
+        return;
+      }
+
+      displayReview(text, name, rating);
 
       const saved = JSON.parse(localStorage.getItem("reviews") || "[]");
-      saved.unshift({ text: text, name: "Guest" });
+      saved.unshift({ text, name, rating });
       localStorage.setItem("reviews", JSON.stringify(saved));
 
-      input.value = "";
+      document.getElementById("reviewInput").value = "";
+      document.getElementById("nameInput").value = "";
+      document.getElementById("ratingInput").value = "5";
     }
   </script>
 </body>
